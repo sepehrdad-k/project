@@ -1,0 +1,51 @@
+@import url(../myfont.css);
+.nav{
+    background-color: #222;
+}
+.nav-link{
+    color: #fff;
+}
+@media screen and (max-width:700px){
+    .menu1{
+        display: initial;
+    }
+    .menu2{
+        display: none;
+    }
+}
+@media screen and (min-width:701px){
+    .menu1{
+        display: none;
+    }
+    .menu2{
+        display: initial;
+    }
+}
+body{
+    background-image: url(../img/vintage-wallpaper.png);
+    direction: rtl;
+    font-family: myfont;
+}
+.giftcards{
+    margin-top: 100px;
+    margin-bottom: 100px;
+    padding: 30px;
+    border-radius: 20px;
+    background-color: #fff;
+}
+.card{
+    padding-left: 0px;
+    margin-left: 0px;
+    margin-bottom: 30px;
+    box-shadow: 5px 5px 3px #555;
+}
+.card-img-top{
+    height: 240px;
+}
+.row-title{
+    margin-bottom: 100px;
+}
+.box{
+    display: flex;
+    justify-content: center;
+}

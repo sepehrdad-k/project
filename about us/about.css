@@ -1,0 +1,47 @@
+@import url(../myfont.css);
+.nav{
+    background-color: #222;
+}
+.nav-link{
+    color: #fff;
+}
+@media screen and (max-width:700px){
+    .menu1{
+        display: initial;
+    }
+    .menu2{
+        display: none;
+    }
+}
+@media screen and (min-width:701px){
+    .menu1{
+        display: none;
+    }
+    .menu2{
+        display: initial;
+    }
+}
+body{
+    background-image: url(../img/vintage-wallpaper.png);
+    direction: rtl;
+    font-family: myfont;
+}
+.payam{
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 20px;
+    margin-top: 100px;
+    width: 100%;
+}
+.alerts{
+    margin-top: 50px;
+}
+#alert1{
+    display: none;
+}
+#alert2{
+    display: none;
+}
+#alert3{
+    display: none;
+}

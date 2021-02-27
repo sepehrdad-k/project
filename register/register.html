@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link rel="stylesheet" href="./register.css">
+    <link rel="icon" href="../favicon/gift-card.png" type="image/x-icon">
+    <title>Giftcard land</title>
+</head>
+<body>
+    <nav>
+        <ul class="nav nav-pills">
+          <li class="nav-item menu1">
+            <div class="dropdown">
+                <button class="btn btn-primary dropdown-toggle" type="button" id="mymenu" data-bs-toggle="dropdown">
+                  صفحات
+                </button>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="../index.html">خانه</a></li>
+                  <li><a class="dropdown-item" href="../stuff/stuff.html">محصولات</a></li>
+                  <li><a class="dropdown-item" href="../register/register.html">ثبت نام</a></li>
+                  <li><a class="dropdown-item" href="../about us/about.html">ارتباط با ما</a></li>
+                  <li><a class="dropdown-item" href="../contact us/contact.html">تماس با ما</a></li>
+                </ul>
+            </div>
+         </li>
+            <li class="nav-item menu2">
+              <a class="nav-link" href="../index.html">خانه</a>
+            </li>
+            <li class="nav-item menu2">
+              <a class="nav-link" href="../stuff/stuff.html">محصولات</a>
+            </li>
+            <li class="nav-item menu2">
+              <a class="nav-link active" href="#">ثبت نام</a>
+            </li>
+            <li class="nav-item menu2">
+              <a class="nav-link" href="../about us/about.html">ارتباط با ما</a>
+            </li>
+            <li class="nav-item menu2">
+                <a class="nav-link" href="../contact us/contact.html">تماس با ما</a>
+            </li>
+          </ul>
+    </nav>
+    <div class="container alert-container">
+        <div class="alert alert-success" id="alert3" role="alert">
+            ثبت نام با موفقیت انجام شد!
+        </div>
+        <div class="alert alert-warning" id="alert1" role="alert">
+            نام کاربری باید حداکثر 10 کاراکتر باشد
+        </div>
+        <div class="alert alert-warning" id="alert2" role="alert">
+            رمز عبور باید حداقل 6 کاراکتر باشد
+        </div>
+        <div class="alert alert-danger" id="alert4" role="alert">
+            لطفا تمامی فیلد ها را پر کنید
+        </div>
+        <div class="alert alert-danger" id="alert5" role="alert">
+          لطفا قوانین و شرایط سایت را مطالعه و قبول کنید
+        </div>
+        <div class="alert alert-warning" id="alert6" role="alert">
+          ایمیل شما نامعتبر است
+        </div>
+        <div class="alert alert-warning" id="alert7" role="alert">
+          شماره تلفن باید فقط شامل اعداد و  11 رقم باشد 
+        </div>
+    </div>
+    <div class="container form_container">
+        <form id="myform">
+            <div class="mb-3">
+              <label for="username" class="form-label">نام کاربری</label>
+              <input type="text" class="form-control" id="username" placeholder="حداکثر 10 کاراکتر">
+            </div>
+            <div class="mb-3">
+              <label for="pass_word" class="form-label">Password</label>
+              <input type="password" class="form-control" id="pass_word" placeholder="حداقل 6 کاراکتر">
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">ایمیل</label>
+                <input type="text" class="form-control" id="email" placeholder="example@yahoo.com">
+              </div>
+              <div class="mb-3">
+                <label for="number" class="form-label">تلفن همراه</label>
+                <input type="text" class="form-control" id="number" placeholder="09xxxxxxxxx">
+              </div>
+              <div class="mb-3 form-check">
+                <input type="checkbox" class="form-check-input" id="mycheck">
+                <label class="form-check-label" for="mycheck">من قوانین این سایت را مطالعه کرده و قبول دارم</label>
+              </div>
+            <button type="submit" class="btn btn-primary" id="formbtn">تائید</button>
+        </form>
+    </div>
+        
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+    <script src="./register.js"></script>
+</body>
+</html>

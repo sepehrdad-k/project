@@ -1,0 +1,59 @@
+@import url(../myfont.css);
+.nav{
+    background-color: #222;
+}
+.nav-link{
+    color: #fff;
+}
+@media screen and (max-width:700px){
+    .menu1{
+        display: initial;
+    }
+    .menu2{
+        display: none;
+    }
+}
+@media screen and (min-width:701px){
+    .menu1{
+        display: none;
+    }
+    .menu2{
+        display: initial;
+    }
+}
+body{
+    background-image: url(../img/vintage-wallpaper.png);
+    direction: rtl;
+    font-family: myfont;
+}
+.form_container{
+    background-color: #fff;
+    padding: 50px;
+    border-radius: 20px;
+    margin-top: 100px;
+    margin-bottom: 200px;
+}
+.alert-container{
+    margin-top: 100px;
+}
+#alert1{
+    display: none;
+}
+#alert2{
+    display: none;
+}
+#alert3{
+    display: none;
+}
+#alert4{
+    display: none;
+}
+#alert5{
+    display: none;
+}
+#alert6{
+    display: none;
+}
+#alert7{
+    display: none;
+}
