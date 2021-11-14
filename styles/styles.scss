@@ -4,4 +4,7 @@
   box-sizing: border-box;
   font-family: "Fira Sans", sans-serif;
 }
-@import "./navbar";
+$light: #eee;
+$dark: #212121;
+$primary: #6767eb;
+@import "./navbar", "./home";

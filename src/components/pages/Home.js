@@ -2,9 +2,19 @@ import React from "react";
 
 const Home = () => {
   return (
-    <div>
-      <h1>Hello From Home</h1>
-    </div>
+    <main className="home">
+      <section className="section1">
+        <div className="title">
+          <h1>
+            This Is
+            <br />
+            My <span>Website</span>
+          </h1>
+          <h3>here is a random button for no reason!</h3>
+          <button type="button">Button</button>
+        </div>
+      </section>
+    </main>
   );
 };
 
