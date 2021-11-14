@@ -2,7 +2,7 @@ import React from "react";
 
 const Home = () => {
   return (
-    <main className="home">
+    <main>
       <section className="section1">
         <div className="title">
           <h1>
@@ -14,6 +14,7 @@ const Home = () => {
           <button type="button">Button</button>
         </div>
       </section>
+      <section className="section2"></section>
     </main>
   );
 };
