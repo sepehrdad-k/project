@@ -1,10 +1,10 @@
 import React from "react";
 
-const Card = (props) => {
+const Card = ({ name }) => {
   return (
     <div className="card">
       <div className="card-content">
-        <h1 className="card-title">{props.name}</h1>
+        <h1 className="card-title">{name}</h1>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus
           doloremque enim dolorem neque nam recusandae ullam libero officiis
