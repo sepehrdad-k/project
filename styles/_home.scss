@@ -1,11 +1,15 @@
 .section1 {
   margin-top: 7vh;
   height: 93vh;
+  width: 100%;
   background-position: center center;
   background-image: url(../src/components/assets/pexels-pixabay-373543-min.jpg);
   background-size: cover;
   display: grid;
   grid-template-columns: 1fr 1fr;
+  @media only screen and(max-width:800px) {
+    grid-template-columns: 1fr;
+  }
   &::after {
     content: "";
     position: absolute;
@@ -51,7 +55,23 @@
     }
   }
 }
+@import "./card";
+
 .section2 {
-  height: 100vh;
   background-color: $light;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  h2 {
+    font-size: 3rem;
+    margin-top: 50px;
+  }
+  .cont {
+    display: grid;
+    width: 100%;
+    padding: 100px 0px 50px 0;
+    grid-gap: 50px;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  }
 }

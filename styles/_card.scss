@@ -1,0 +1,75 @@
+.card {
+  width: 350px;
+  height: 500px;
+  border-radius: 10px;
+  justify-self: center;
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  background-image: url(../src/components/assets/pexels-pixabay-373543-min.jpg);
+  background-position: top right;
+  box-shadow: 5px 5px 10px 3px $dark;
+  overflow: hidden;
+  transition: transform 200ms ease;
+  &:hover {
+    transform: scale(1.05);
+  }
+  &:hover &-title::after {
+    transform: translateX(-20px) scale(1);
+  }
+  &:hover &-content {
+    transform: translateY(0px);
+  }
+  &:hover p {
+    opacity: 1;
+  }
+  &-content {
+    background: linear-gradient(
+      to top,
+      rgba($dark, 1),
+      rgba($dark, 0.5) 80%,
+      rgba($dark, 0)
+    );
+    padding: 20px;
+    transition: transform 500ms ease 200ms;
+    transform: translateY(210px);
+  }
+  &-title {
+    color: $light;
+    display: flex;
+    flex-direction: column;
+    &::after {
+      content: "";
+      width: 300px;
+      height: 5px;
+      border-top-right-radius: 5px;
+      border-bottom-right-radius: 5px;
+      background-color: $secondary;
+      transform: translateX(-20px) scale(0);
+      transition: transform 200ms ease;
+      transform-origin: left;
+    }
+  }
+  p {
+    margin-top: 10px;
+    color: $light;
+    opacity: 0;
+    transition: opacity 500ms ease 200ms;
+  }
+  button {
+    background-color: rgba($secondary, 0.5);
+    color: $light;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    height: 30px;
+    width: 100px;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: background-color 300ms ease;
+    &:hover {
+      background-color: rgba($secondary, 1);
+    }
+  }
+}
