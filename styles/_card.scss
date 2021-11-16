@@ -14,17 +14,26 @@
   box-shadow: 0.5rem 0.5rem 1rem 0.3rem $dark;
   overflow: hidden;
   transition: transform 200ms ease;
-  &:hover {
-    transform: scale(1.05);
-  }
-  &:hover &-title::after {
-    transform: translateX(-2rem) scale(1);
-  }
-  &:hover &-content {
-    transform: translateY(0);
-  }
-  &:hover p {
-    opacity: 1;
+  @media (hover) {
+    &:hover,
+    &:focus-within {
+      transform: scale(1.05);
+    }
+    &:hover &-title::after,
+    &:focus-within &-title::after {
+      transform: translateX(-2rem) scalex(1);
+    }
+    &:hover &-content,
+    &:focus-within &-content {
+      transform: translateY(0);
+    }
+    &:focus-within &-content {
+      transition-duration: 0ms;
+    }
+    &:hover p,
+    &:focus-within p {
+      opacity: 1;
+    }
   }
   &-content {
     background: linear-gradient(
@@ -34,8 +43,10 @@
       rgba($dark, 0)
     );
     padding: 2rem;
-    transition: transform 500ms ease 200ms;
-    transform: translateY(21rem);
+    @media (hover) {
+      transition: transform 500ms ease 200ms;
+      transform: translateY(21rem);
+    }
   }
   &-title {
     color: $light;
@@ -49,20 +60,23 @@
       border-top-right-radius: 0.5rem;
       border-bottom-right-radius: 0.5rem;
       background-color: $secondary;
-      transform: translateX(-2rem) scale(0);
-      transition: transform 200ms ease;
-      transform-origin: left;
+      @media (hover) {
+        transform: translateX(-2rem) scale(0);
+        transition: transform 200ms ease;
+        transform-origin: left;
+      }
     }
   }
   p {
     font-size: 1.6rem;
     margin-top: 1rem;
     color: $light;
-    opacity: 0;
-    transition: opacity 500ms ease 200ms;
+    @media (hover) {
+      opacity: 0;
+      transition: opacity 500ms ease 200ms;
+    }
   }
   button {
-    background-color: rgba($secondary, 0.5);
     color: $light;
     font-size: 1.6rem;
     border: none;
@@ -71,9 +85,14 @@
     width: 10rem;
     margin-top: 1rem;
     cursor: pointer;
-    transition: background-color 300ms ease;
-    &:hover {
-      background-color: rgba($secondary, 1);
+    background-color: $secondary;
+    @media (hover) {
+      transition: background-color 300ms ease;
+      background-color: rgba($secondary, 0.5);
+      &:hover,
+      &:focus-within {
+        background-color: rgba($secondary, 1);
+      }
     }
   }
 }

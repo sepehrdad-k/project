@@ -45,15 +45,19 @@
     margin-top: 1em;
     align-self: center;
     color: $light;
-    background-color: rgba($primary, 0.5);
+    background-color: $primary;
     width: 6.5em;
     height: 1.6em;
     border: 0.1em solid $primary;
     border-radius: 0.5rem;
     cursor: pointer;
-    transition: background-color 300ms ease;
-    &:hover {
-      background-color: rgba($primary, 1);
+    @media (hover) {
+      transition: background-color 300ms ease;
+      background-color: rgba($primary, 0.5);
+      &:hover,
+      &:focus-within {
+        background-color: rgba($primary, 1);
+      }
     }
   }
 }
