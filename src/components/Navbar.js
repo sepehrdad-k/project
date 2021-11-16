@@ -12,7 +12,7 @@ const Navbar = () => {
       <h1>Navbar</h1>
       <nav className="nav-bar">
         <ul>
-          <li className="taghi">
+          <li>
             <Link
               onClick={() =>
                 setClass(["nav-link active", "nav-link", "nav-link"])

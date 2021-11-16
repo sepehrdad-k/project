@@ -1,11 +1,10 @@
+@use "./card";
+@use "./home";
+@use "./navbar";
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Fira Sans", sans-serif;
+  font-size: 10px;
 }
-$light: #eee;
-$dark: #212121;
-$primary: #6767eb;
-$secondary: #6bce6b;
-@import "./navbar", "./home";

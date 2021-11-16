@@ -1,3 +1,4 @@
+@use "./variables" as *;
 .section1 {
   margin-top: 7vh;
   height: 110vh;
@@ -28,26 +29,27 @@
   flex-direction: column;
   h1 {
     color: $light;
-    font-size: 4rem;
+    font-size: 6.4rem;
     span {
+      font-size: 1em;
       color: $primary;
     }
   }
   h3 {
-    margin-top: 15px;
+    margin-top: 1em;
     color: $light;
-    font-size: 1.3rem;
+    font-size: 2rem;
   }
   button {
-    margin-top: 50px;
+    font-size: 4.5rem;
+    margin-top: 1em;
     align-self: center;
     color: $light;
     background-color: rgba($primary, 0.5);
-    width: 300px;
-    height: 70px;
-    border: 5px solid $primary;
-    border-radius: 5px;
-    font-size: 2.7rem;
+    width: 6.5em;
+    height: 1.6em;
+    border: 0.1em solid $primary;
+    border-radius: 0.5rem;
     cursor: pointer;
     transition: background-color 300ms ease;
     &:hover {
@@ -55,8 +57,6 @@
     }
   }
 }
-@import "./card";
-
 .section2 {
   background-color: $light;
   display: flex;
@@ -64,14 +64,14 @@
   justify-content: center;
   align-items: center;
   h2 {
-    font-size: 3rem;
-    margin-top: 50px;
+    font-size: 4.8rem;
+    margin-top: 5rem;
   }
   .cont {
     display: grid;
     width: 100%;
-    padding: 100px 0px 50px 0;
-    grid-gap: 50px;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    padding: 10rem 0 5rem 0;
+    grid-gap: 5rem;
+    grid-template-columns: repeat(auto-fit, minmax(35rem, 1fr));
   }
 }
