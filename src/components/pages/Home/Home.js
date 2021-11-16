@@ -20,7 +20,7 @@ const Home = () => {
         <h2>Products</h2>
         <div className="cont">
           {Products.map((item) => (
-            <Card name={item} />
+            <Card key={item} name={item} />
           ))}
         </div>
       </section>

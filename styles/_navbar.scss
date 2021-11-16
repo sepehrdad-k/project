@@ -5,23 +5,41 @@
   top: 0;
   left: 0;
   right: 0;
-  padding: 0 5rem 0 10rem;
+  padding: 0 5vw 0 6vw;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: $dark;
-  height: 7vh;
+  background-color: rgba($dark, 0.8);
+  height: 7rem;
   h1 {
     color: $light;
     font-size: 4.2rem;
   }
   &-bar {
     width: 40rem;
+    transition: transform 300ms ease;
     ul {
       display: grid;
       grid-template-columns: repeat(3, auto);
       grid-column-gap: 1rem;
       list-style: none;
+    }
+    @media only screen and (max-width: 800px) {
+      position: fixed;
+      right: 0;
+      top: 7rem;
+      width: 20rem;
+      height: 100vh;
+      background-color: rgba($dark, 0.8);
+      transform: translateX(100%);
+      ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        li {
+          padding: 2rem;
+        }
+      }
     }
   }
   &-link {
@@ -39,4 +57,42 @@
       }
     }
   }
+}
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  @media only screen and (min-width: 800px) {
+    display: none;
+  }
+  @media (hover) {
+    cursor: pointer;
+    &:hover .bar:nth-child(2),
+    &:focus-within .bar:nth-child(2) {
+      background-color: $primary;
+      transform: translateX(1.6rem);
+    }
+  }
+}
+
+.bar {
+  margin: 0.3rem 0 0.3rem 0;
+  width: 3.3rem;
+  height: 0.4rem;
+  background-color: $light;
+  transition: transform 300ms ease, background-color 300ms ease,
+    opacity 300ms ease;
+}
+.open div:first-child {
+  background-color: $primary;
+  transform: translateX(0.4rem) translateY(0.95rem) rotateZ(45deg);
+}
+.open div:last-child {
+  background-color: $primary;
+  transform: translateX(0.4rem) translateY(-0.95rem) rotateZ(-45deg);
+}
+.open div:nth-child(2) {
+  opacity: 0;
+}
+.active {
+  transform: translateX(0);
 }

@@ -47,6 +47,11 @@ const Navbar = () => {
           </li>
         </ul>
       </nav>
+      <div className="hamburger">
+        <div className="bar"></div>
+        <div className="bar"></div>
+        <div className="bar"></div>
+      </div>
     </header>
   );
 };
