@@ -87,8 +87,7 @@
     @media (hover) {
       transition: background-color 300ms ease;
       background-color: rgba($secondary, 0.5);
-      &:hover,
-      &:focus-within {
+      &:hover {
         background-color: rgba($secondary, 1);
       }
     }
