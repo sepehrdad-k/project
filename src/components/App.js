@@ -1,5 +1,6 @@
 import React from "react";
 import Navbar from "./Navbar";
+import Cursor from "./Cursor";
 import { Route, Routes } from "react-router-dom";
 import Home from "./pages/Home/Home";
 import Contact from "./pages/Contact/Contact";
@@ -9,6 +10,7 @@ const App = () => {
   return (
     <>
       <Navbar />
+      <Cursor />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/contact" element={<Contact />} />

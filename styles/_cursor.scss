@@ -1,0 +1,54 @@
+@use "./variables" as *;
+.cursor {
+  display: none;
+  pointer-events: none;
+  @media (hover) {
+    position: fixed;
+    z-index: 1000;
+    animation-name: cursoranim;
+    animation-duration: 1s;
+    animation-timing-function: ease;
+    animation-iteration-count: infinite;
+    display: grid;
+    & div:first-child {
+      width: 0.8rem;
+      height: 0.8rem;
+      background-color: rgba($light, 0.9);
+      border-radius: 50%;
+      justify-self: center;
+      align-self: center;
+      grid-row: 1;
+      grid-column: 1;
+    }
+    & div:nth-child(2) {
+      width: 4rem;
+      height: 4rem;
+      border-radius: 50%;
+      border: 0.8rem solid rgba($grey, 0.7);
+      justify-self: center;
+      align-self: center;
+      grid-row: 1;
+      grid-column: 1;
+    }
+    & div:last-child {
+      width: 6rem;
+      height: 6rem;
+      border-radius: 50%;
+      border: 0.4rem solid rgba($light, 0.9);
+      justify-self: center;
+      align-self: center;
+      grid-row: 1;
+      grid-column: 1;
+    }
+  }
+}
+
+@keyframes cursoranim {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.8);
+  }
+}

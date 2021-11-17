@@ -64,7 +64,6 @@
     display: none;
   }
   @media (hover) {
-    cursor: pointer;
     &:hover .bar:nth-child(2),
     &:focus-within .bar:nth-child(2) {
       background-color: $primary;

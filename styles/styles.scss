@@ -1,15 +1,17 @@
 @use "./card";
 @use "./home";
 @use "./navbar";
+@use "./cursor";
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Fira Sans", sans-serif;
   font-size: 10px;
-}
-@media only screen and(max-width:500px) {
-  * {
+  @media (hover) {
+    cursor: none;
+  }
+  @media only screen and(max-width:500px) {
     font-size: 8px;
   }
 }
