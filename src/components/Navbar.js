@@ -7,10 +7,11 @@ const Navbar = () => {
     "nav-link",
     "nav-link",
   ]);
+  const [isOpen, setisOpen] = useState(false);
   return (
     <header className="nav">
       <h1>Navbar</h1>
-      <nav className="nav-bar">
+      <nav className={isOpen ? "nav-bar active" : "nav-bar"}>
         <ul>
           <li>
             <Link
@@ -47,7 +48,10 @@ const Navbar = () => {
           </li>
         </ul>
       </nav>
-      <div className="hamburger">
+      <div
+        onClick={() => setisOpen(!isOpen)}
+        className={isOpen ? "hamburger open" : "hamburger"}
+      >
         <div className="bar"></div>
         <div className="bar"></div>
         <div className="bar"></div>

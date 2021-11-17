@@ -17,7 +17,7 @@
   }
   &-bar {
     width: 40rem;
-    transition: transform 300ms ease;
+    transition: transform 400ms ease;
     ul {
       display: grid;
       grid-template-columns: repeat(3, auto);
@@ -26,12 +26,11 @@
     }
     @media only screen and (max-width: 800px) {
       position: fixed;
-      right: 0;
+      right: -40rem;
       top: 7rem;
       width: 20rem;
       height: 100vh;
       background-color: rgba($dark, 0.8);
-      transform: translateX(100%);
       ul {
         display: flex;
         flex-direction: column;
@@ -94,5 +93,5 @@
   opacity: 0;
 }
 .active {
-  transform: translateX(0);
+  transform: translateX(-40rem);
 }

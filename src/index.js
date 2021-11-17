@@ -10,13 +10,6 @@ ReactDOM.render(
   </BrowserRouter>,
   document.getElementById("root")
 );
-const ham = document.querySelector(".hamburger");
-const menue = document.querySelector(".nav-bar");
-ham.addEventListener("click", function () {
-  this.classList.toggle("open");
-  menue.classList.toggle("active");
-});
-
 if (module.hot) {
   module.hot.accept();
 }
