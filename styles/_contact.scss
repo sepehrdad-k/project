@@ -1,0 +1,103 @@
+@use "./variables" as *;
+@mixin formgroup($gridname) {
+  grid-area: #{$gridname};
+  align-self: center;
+  width: 80%;
+  label {
+    font-size: 1.6rem;
+  }
+  input {
+    font-size: 1.6rem;
+    width: 100%;
+    height: 3rem;
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+    border: none;
+    border-radius: 0.5rem;
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 0.6rem 0.3rem $grey;
+    }
+  }
+}
+.contact {
+  background: linear-gradient(-10deg, $primary, $dark 50%);
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.form {
+  background-color: $light;
+  width: 60rem;
+  height: 60rem;
+  padding: 2rem;
+  margin: 2rem;
+  border-radius: 1rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    "firstname lastname"
+    "email adress"
+    "message message"
+    "button ...";
+  @media only screen and (max-width: 700px) {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "firstname"
+      "lastname"
+      "email"
+      "adress"
+      "message"
+      "button";
+  }
+  .firstname {
+    @include formgroup(firstname);
+  }
+  .lastname {
+    @include formgroup(lastname);
+  }
+  .email {
+    @include formgroup(email);
+  }
+  .adress {
+    @include formgroup(adress);
+  }
+  .message {
+    grid-area: message;
+    align-self: center;
+    label {
+      font-size: 1.6rem;
+    }
+    textarea {
+      width: 100%;
+      height: 20rem;
+      padding: 0.5rem;
+      margin-top: 0.5rem;
+      border: none;
+      border-radius: 0.5rem;
+      font-size: 1.6rem;
+      resize: none;
+      &:focus {
+        outline: none;
+        box-shadow: 0 0 0.6rem 0.3rem $grey;
+      }
+    }
+  }
+  &-button {
+    grid-area: button;
+    align-self: center;
+    font-size: 2rem;
+    height: 2.5em;
+    width: 7em;
+    border: none;
+    border-radius: 1rem;
+    color: $light;
+    background-color: $grey;
+    transition: background-color 300ms ease;
+    &:hover {
+      background-color: $dark;
+    }
+  }
+}

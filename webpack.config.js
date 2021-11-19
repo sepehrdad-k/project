@@ -11,6 +11,7 @@ const config = {
   },
   devServer: {
     static: "./dist",
+    historyApiFallback: true,
     port: 3000,
     hot: true,
   },

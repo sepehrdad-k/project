@@ -1,12 +1,7 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
-  const [Class, setClass] = useState([
-    "nav-link active",
-    "nav-link",
-    "nav-link",
-  ]);
   const [isOpen, setisOpen] = useState(false);
   return (
     <header className="nav">
@@ -14,37 +9,34 @@ const Navbar = () => {
       <nav className={isOpen ? "nav-bar active" : "nav-bar"}>
         <ul>
           <li>
-            <Link
-              onClick={() =>
-                setClass(["nav-link active", "nav-link", "nav-link"])
+            <NavLink
+              className={(data) =>
+                data.isActive ? "nav-link is-active" : "nav-link"
               }
-              className={Class[0]}
-              to="/"
+              to="/home"
             >
               Home
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <Link
-              onClick={() =>
-                setClass(["nav-link", "nav-link active", "nav-link"])
+            <NavLink
+              className={(data) =>
+                data.isActive ? "nav-link is-active" : "nav-link"
               }
-              className={Class[1]}
-              to="/Contact"
+              to="/contact"
             >
               Contact
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <Link
-              onClick={() =>
-                setClass(["nav-link", "nav-link", "nav-link active"])
+            <NavLink
+              className={(data) =>
+                data.isActive ? "nav-link is-active" : "nav-link"
               }
-              className={Class[2]}
-              to="/Users"
+              to="/users"
             >
               Users
-            </Link>
+            </NavLink>
           </li>
         </ul>
       </nav>
