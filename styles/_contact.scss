@@ -94,10 +94,10 @@
     border: none;
     border-radius: 1rem;
     color: $light;
-    background-color: $grey;
+    background-color: rgba($dark, 0.5);
     transition: background-color 300ms ease;
     &:hover {
-      background-color: $dark;
+      background-color: rgba($dark, 1);
     }
   }
 }

@@ -1,8 +1,8 @@
-@use "./card";
-@use "./home";
-@use "./navbar";
-@use "./cursor";
-@use "./contact";
+@forward "./card";
+@forward "./home";
+@forward "./navbar";
+@forward "./cursor";
+@forward "./contact";
 * {
   margin: 0;
   padding: 0;
