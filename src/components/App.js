@@ -4,7 +4,7 @@ import Cursor from "./Cursor";
 import { Route, Routes, Navigate } from "react-router-dom";
 import Home from "./pages/Home/Home";
 import Contact from "./pages/Contact/Contact";
-import Users from "./pages/Users/Users";
+import Dogs from "./pages/Dogs/Dogs";
 
 const App = () => {
   return (
@@ -15,7 +15,7 @@ const App = () => {
         <Route path="/" element={<Navigate to="/home" />} />
         <Route path="/home" element={<Home />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/users" element={<Users />} />
+        <Route path="/dogs" element={<Dogs />} />
       </Routes>
     </>
   );

@@ -33,9 +33,9 @@ const Navbar = () => {
               className={(data) =>
                 data.isActive ? "nav-link is-active" : "nav-link"
               }
-              to="/users"
+              to="/dogs"
             >
-              Users
+              Numbers
             </NavLink>
           </li>
         </ul>
