@@ -1,0 +1,38 @@
+@use "./variables" as *;
+
+.dogs {
+  background-color: $dark;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.dogapp {
+  margin-top: 15rem;
+  margin-bottom: 15rem;
+  padding: 2rem;
+  width: 70%;
+  height: 80rem;
+  border-radius: 2rem;
+  background-color: $grey;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 1fr 5fr;
+  grid-gap: 1rem;
+  &-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    h3 {
+      font-size: 2rem;
+      color: $light;
+    }
+  }
+  &-select {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &-content {
+    grid-column: span 2;
+  }
+}

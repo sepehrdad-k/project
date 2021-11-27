@@ -16,7 +16,7 @@
     border-radius: 0.5rem;
     &:focus {
       outline: none;
-      box-shadow: 0 0 0.6rem 0.3rem $grey;
+      box-shadow: 0 0 0.6rem 0.3rem $dark;
     }
   }
 }
@@ -29,7 +29,8 @@
   justify-content: center;
 }
 .form {
-  background-color: $light;
+  background-color: $grey;
+  color: $light;
   width: 60rem;
   height: 60rem;
   padding: 2rem;
@@ -81,7 +82,7 @@
       resize: none;
       &:focus {
         outline: none;
-        box-shadow: 0 0 0.6rem 0.3rem $grey;
+        box-shadow: 0 0 0.6rem 0.3rem $dark;
       }
     }
   }
@@ -94,10 +95,13 @@
     border: none;
     border-radius: 1rem;
     color: $light;
-    background-color: rgba($dark, 0.5);
-    transition: background-color 300ms ease;
-    &:hover {
-      background-color: rgba($dark, 1);
+    background-color: $dark;
+    @media (hover) {
+      background-color: rgba($dark, 0.7);
+      transition: background-color 300ms ease;
+      &:hover {
+        background-color: rgba($dark, 1);
+      }
     }
   }
 }

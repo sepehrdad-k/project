@@ -35,7 +35,7 @@ const Navbar = () => {
               }
               to="/dogs"
             >
-              Numbers
+              Dogs App
             </NavLink>
           </li>
         </ul>

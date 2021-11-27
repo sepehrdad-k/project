@@ -1,0 +1,61 @@
+@use "./variables" as *;
+
+.menue {
+  width: 22rem;
+  position: relative;
+  &-selected {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    font-size: 1.6rem;
+    padding: 0.4em 2.5em 0.4em 0.7em;
+    border-radius: 0.5rem;
+    background-color: $dark;
+    color: $light;
+    position: relative;
+    &::after {
+      content: "";
+      width: 0.7rem;
+      height: 0.7rem;
+      border: 0.3rem solid $light;
+      border-top-color: transparent;
+      border-left-color: transparent;
+      position: absolute;
+      right: 1rem;
+      transform: translateY(0) rotateZ(135deg);
+      transition: transform 100ms ease;
+    }
+    &:hover::after {
+      transform: translateY(-0.4rem) rotateZ(45deg);
+    }
+  }
+  &-box {
+    position: absolute;
+    top: 4rem;
+    width: 22rem;
+    border-radius: 0.5rem;
+    max-height: 20rem;
+    overflow: hidden;
+    overflow-y: scroll;
+    transform: scaleY(0);
+    opacity: 0;
+    transform-origin: top;
+    transition: transform 400ms ease, opacity 400ms ease;
+  }
+  &-option {
+    background-color: $dark;
+    color: $light;
+    font-size: 1.6rem;
+    padding: 0.4em 2.5em 0.4em 0.7em;
+    &:hover {
+      background-color: $primary;
+    }
+  }
+  &-active {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+  &-open::after {
+    transform: translateY(-0.4rem) rotateZ(45deg);
+  }
+}
