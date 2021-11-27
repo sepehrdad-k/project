@@ -15,13 +15,7 @@ const Cursor = () => {
     };
   }, []);
 
-  return (
-    <div ref={CurserRef} className="cursor">
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
-  );
+  return <div ref={CurserRef} className="cursor"></div>;
 };
 
 export default Cursor;
