@@ -21,7 +21,7 @@
   }
 }
 .contact {
-  background: linear-gradient(-10deg, $primary, $dark 50%);
+  background: linear-gradient(-5deg, $grey, $dark 50%);
   width: 100%;
   height: 100vh;
   display: flex;
@@ -97,10 +97,10 @@
     color: $light;
     background-color: $dark;
     @media (hover) {
-      background-color: rgba($dark, 0.7);
+      background-color: rgba($secondary, 0.5);
       transition: background-color 300ms ease;
       &:hover {
-        background-color: rgba($dark, 1);
+        background-color: rgba($secondary, 1);
       }
     }
   }

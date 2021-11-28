@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import { Appcontext } from "./App";
 const Navbar = () => {
   const [isOpen, setisOpen] = useState(false);
-  const [, setPointer] = useContext(Appcontext);
+  const { setPointer } = useContext(Appcontext);
   return (
     <header className="nav">
       <h1>Navbar</h1>

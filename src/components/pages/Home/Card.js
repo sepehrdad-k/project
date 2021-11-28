@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { Appcontext } from "../../App";
 const Card = ({ name }) => {
-  const [, setPointer] = useContext(Appcontext);
+  const { setPointer } = useContext(Appcontext);
   return (
     <div className="card">
       <div className="card-content">

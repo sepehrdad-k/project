@@ -15,7 +15,7 @@ const Cursor = () => {
       document.removeEventListener("mousemove", CurserPosition);
     };
   }, []);
-  const [Pointer] = useContext(Appcontext);
+  const { Pointer } = useContext(Appcontext);
   return (
     <div
       ref={CurserRef}

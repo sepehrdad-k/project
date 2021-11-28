@@ -10,8 +10,9 @@ export const Appcontext = React.createContext();
 
 const App = () => {
   const [Pointer, setPointer] = useState(false);
+  const [Value, setValue] = useState("");
   return (
-    <Appcontext.Provider value={[Pointer, setPointer]}>
+    <Appcontext.Provider value={{ Pointer, setPointer, Value, setValue }}>
       <Navbar />
       <Cursor />
       <Routes>

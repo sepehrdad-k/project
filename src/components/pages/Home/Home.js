@@ -3,7 +3,7 @@ import Card from "./Card";
 import { Appcontext } from "../../App";
 const Home = () => {
   const Products = ["Product1", "Product2", "Product3", "Product4"];
-  const [, setPointer] = useContext(Appcontext);
+  const { setPointer } = useContext(Appcontext);
   return (
     <main>
       <section className="section1">

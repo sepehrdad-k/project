@@ -1,11 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Selector from "./Selector";
+import { Appcontext } from "../../App";
 import "regenerator-runtime/runtime";
 const Dogs = () => {
-  const [Value, setValue] = useState("");
-  const changevalue = (input) => {
-    setValue(input);
-  };
+  const { Value } = useContext(Appcontext);
+
   return (
     <>
       <main className="dogs">
@@ -16,7 +15,7 @@ const Dogs = () => {
             </h3>
           </div>
           <div className="dogapp-select">
-            <Selector changevalue={changevalue} />
+            <Selector />
           </div>
           <div className="dogapp-content">{Value}</div>
         </section>

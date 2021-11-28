@@ -1,7 +1,8 @@
 import React, { useState, useEffect, useContext } from "react";
 import { Appcontext } from "../../App";
-const Selector = (props) => {
-  const [, setPointer] = useContext(Appcontext);
+const Selector = () => {
+  const { setPointer } = useContext(Appcontext);
+  const { setValue } = useContext(Appcontext);
   const [Data, setData] = useState(["options"]);
   const getdata = async () => {
     const data = await fetch("https://dog.ceo/api/breeds/list/all");
@@ -15,11 +16,10 @@ const Selector = (props) => {
   }, []);
   const [Menue, setMenue] = useState(false);
   const [Selected, setSelected] = useState("Choose Breed");
-  const changevalue = props.changevalue;
   const selection = (input) => {
     setMenue(false);
     setSelected(input);
-    changevalue(input);
+    setValue(input);
   };
   return (
     <div
