@@ -1,4 +1,5 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState, useContext } from "react";
+import { Appcontext } from "./App";
 
 const Cursor = () => {
   const CurserRef = useRef(null);
@@ -14,8 +15,13 @@ const Cursor = () => {
       document.removeEventListener("mousemove", CurserPosition);
     };
   }, []);
-
-  return <div ref={CurserRef} className="cursor"></div>;
+  const [Pointer] = useContext(Appcontext);
+  return (
+    <div
+      ref={CurserRef}
+      className={Pointer ? "cursor pointer" : "cursor"}
+    ></div>
+  );
 };
 
 export default Cursor;

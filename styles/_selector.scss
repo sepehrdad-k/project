@@ -1,7 +1,8 @@
 @use "./variables" as *;
 
 .menue {
-  width: 22rem;
+  width: 24rem;
+  padding: 2rem;
   position: relative;
   &-selected {
     display: flex;
@@ -31,7 +32,7 @@
   }
   &-box {
     position: absolute;
-    top: 4rem;
+    top: 6rem;
     width: 22rem;
     border-radius: 0.5rem;
     max-height: 20rem;

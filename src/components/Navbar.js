@@ -1,13 +1,17 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { NavLink } from "react-router-dom";
-
+import { Appcontext } from "./App";
 const Navbar = () => {
   const [isOpen, setisOpen] = useState(false);
+  const [, setPointer] = useContext(Appcontext);
   return (
     <header className="nav">
       <h1>Navbar</h1>
       <nav className={isOpen ? "nav-bar active" : "nav-bar"}>
-        <ul>
+        <ul
+          onMouseEnter={() => setPointer(true)}
+          onMouseLeave={() => setPointer(false)}
+        >
           <li>
             <NavLink
               className={(data) =>
@@ -41,6 +45,8 @@ const Navbar = () => {
         </ul>
       </nav>
       <div
+        onMouseEnter={() => setPointer(true)}
+        onMouseLeave={() => setPointer(false)}
         onClick={() => setisOpen(!isOpen)}
         className={isOpen ? "hamburger open" : "hamburger"}
       >

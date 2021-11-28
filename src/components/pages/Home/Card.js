@@ -1,6 +1,7 @@
-import React from "react";
-
+import React, { useContext } from "react";
+import { Appcontext } from "../../App";
 const Card = ({ name }) => {
+  const [, setPointer] = useContext(Appcontext);
   return (
     <div className="card">
       <div className="card-content">
@@ -12,7 +13,13 @@ const Card = ({ name }) => {
           laboriosam ipsa! Quo ipsam non veritatis sed dolorem error
           dignissimos, in numquam.
         </p>
-        <button type="button">Purchase</button>
+        <button
+          onMouseEnter={() => setPointer(true)}
+          onMouseLeave={() => setPointer(false)}
+          type="button"
+        >
+          Purchase
+        </button>
       </div>
     </div>
   );

@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
 import Card from "./Card";
-
+import { Appcontext } from "../../App";
 const Home = () => {
   const Products = ["Product1", "Product2", "Product3", "Product4"];
+  const [, setPointer] = useContext(Appcontext);
   return (
     <main>
       <section className="section1">
@@ -13,7 +14,13 @@ const Home = () => {
             My <span>Website</span>
           </h1>
           <h3>here is a random button for no reason!</h3>
-          <button type="button">Button</button>
+          <button
+            onMouseEnter={() => setPointer(true)}
+            onMouseLeave={() => setPointer(false)}
+            type="button"
+          >
+            Button
+          </button>
         </div>
       </section>
       <section className="section2">

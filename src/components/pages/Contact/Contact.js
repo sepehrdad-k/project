@@ -1,6 +1,7 @@
-import React, { useState } from "react";
-
+import React, { useContext, useState } from "react";
+import { Appcontext } from "../../App";
 const Contact = () => {
+  const [, setPointer] = useContext(Appcontext);
   const [Message, setMessage] = useState({
     firstname: "",
     lastname: "",
@@ -22,7 +23,12 @@ const Contact = () => {
   return (
     <>
       <main className="contact">
-        <form onSubmit={formhandler} className="form">
+        <form
+          onMouseEnter={() => setPointer(true)}
+          onMouseLeave={() => setPointer(false)}
+          onSubmit={formhandler}
+          className="form"
+        >
           <div className="firstname">
             <label htmlFor="firstname-input" className="firstneme-label">
               Firstname

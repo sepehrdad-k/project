@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from "react";
-
+import React, { useState, useEffect, useContext } from "react";
+import { Appcontext } from "../../App";
 const Selector = (props) => {
+  const [, setPointer] = useContext(Appcontext);
   const [Data, setData] = useState(["options"]);
   const getdata = async () => {
     const data = await fetch("https://dog.ceo/api/breeds/list/all");
@@ -21,7 +22,11 @@ const Selector = (props) => {
     changevalue(input);
   };
   return (
-    <div className="menue">
+    <div
+      onMouseEnter={() => setPointer(true)}
+      onMouseLeave={() => setPointer(false)}
+      className="menue"
+    >
       <div
         onClick={() => setMenue(!Menue)}
         className={Menue ? "menue-selected menue-open" : "menue-selected"}
