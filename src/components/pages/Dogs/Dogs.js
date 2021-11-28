@@ -7,6 +7,7 @@ const Dogs = () => {
   const [List, setList] = useState([]);
   const url = `https://dog.ceo/api/breed/${Value}/images`;
   const getimg = async (url) => {
+    setList([]);
     const response = await fetch(url);
     const result = await response.json();
     setList(result.message);
