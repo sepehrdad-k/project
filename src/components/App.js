@@ -10,7 +10,7 @@ export const Appcontext = React.createContext();
 
 const App = () => {
   const [Pointer, setPointer] = useState(false);
-  const [Value, setValue] = useState("");
+  const [Value, setValue] = useState("akita");
   return (
     <Appcontext.Provider value={{ Pointer, setPointer, Value, setValue }}>
       <Navbar />

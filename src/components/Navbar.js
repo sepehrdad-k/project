@@ -14,6 +14,7 @@ const Navbar = () => {
         >
           <li>
             <NavLink
+              onClick={() => setisOpen(false)}
               className={(data) =>
                 data.isActive ? "nav-link is-active" : "nav-link"
               }
@@ -24,6 +25,7 @@ const Navbar = () => {
           </li>
           <li>
             <NavLink
+              onClick={() => setisOpen(false)}
               className={(data) =>
                 data.isActive ? "nav-link is-active" : "nav-link"
               }
@@ -34,6 +36,7 @@ const Navbar = () => {
           </li>
           <li>
             <NavLink
+              onClick={() => setisOpen(false)}
               className={(data) =>
                 data.isActive ? "nav-link is-active" : "nav-link"
               }

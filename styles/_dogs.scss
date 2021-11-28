@@ -10,18 +10,23 @@
   margin-top: 15rem;
   margin-bottom: 15rem;
   padding: 2rem;
-  width: 70%;
-  height: 80rem;
+  width: 90%;
+  min-height: 80rem;
   border-radius: 2rem;
   background-color: $grey;
   display: grid;
   grid-template-columns: 2fr 1fr;
-  grid-template-rows: 1fr 5fr;
+  grid-template-rows: 10rem 1fr;
+  @media only screen and(max-width:800px) {
+    grid-template-columns: 1fr;
+    grid-template-rows: 10rem 10rem 1fr;
+  }
   grid-gap: 1rem;
   &-title {
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 90%;
     h3 {
       font-size: 2rem;
       color: $light;
@@ -34,5 +39,26 @@
   }
   &-content {
     grid-column: span 2;
+    width: 100%;
+    justify-self: center;
+    @media only screen and(max-width:800px) {
+      grid-column: span 1;
+    }
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(40rem, 1fr));
+    grid-gap: 2rem;
+  }
+  &-img {
+    width: 40rem;
+    height: 30rem;
+    padding: 5rem;
+    border-radius: 3rem;
+    background-color: $dark;
+    justify-self: center;
+    align-self: center;
+    img {
+      width: 30rem;
+      height: 20rem;
+    }
   }
 }
