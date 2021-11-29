@@ -31,6 +31,7 @@
   }
   &-box {
     position: absolute;
+    z-index: 5;
     top: 4rem;
     width: 22rem;
     border-radius: 0.5rem;

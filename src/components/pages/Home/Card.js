@@ -1,6 +1,6 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { Appcontext } from "../../App";
-const Card = ({ name }) => {
+const Card = React.memo(({ name }) => {
   const { setPointer } = useContext(Appcontext);
   return (
     <div className="card">
@@ -23,6 +23,6 @@ const Card = ({ name }) => {
       </div>
     </div>
   );
-};
+});
 
 export default Card;

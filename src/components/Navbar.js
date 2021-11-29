@@ -1,7 +1,7 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import { Appcontext } from "./App";
-const Navbar = () => {
+const Navbar = React.memo(() => {
   const [isOpen, setisOpen] = useState(false);
   const { setPointer } = useContext(Appcontext);
   return (
@@ -59,6 +59,6 @@ const Navbar = () => {
       </div>
     </header>
   );
-};
+});
 
 export default Navbar;

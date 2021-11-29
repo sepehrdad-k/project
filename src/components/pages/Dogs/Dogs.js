@@ -1,18 +1,21 @@
 import React, { useContext, useEffect, useState } from "react";
 import Selector from "./Selector";
 import { Appcontext } from "../../App";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import uuid from "react-uuid";
+import "react-lazy-load-image-component/src/effects/blur.css";
 import "regenerator-runtime/runtime";
-const Dogs = () => {
+const Dogs = React.memo(() => {
   const { Value } = useContext(Appcontext);
   const [List, setList] = useState([]);
   const url = `https://dog.ceo/api/breed/${Value}/images`;
   const getimg = async (url) => {
-    setList([]);
     const response = await fetch(url);
     const result = await response.json();
     setList(result.message);
   };
   useEffect(() => {
+    console.log("getimg");
     getimg(url);
   }, [url]);
 
@@ -31,8 +34,15 @@ const Dogs = () => {
           <div className="dogapp-content">
             {List.map((img) => {
               return (
-                <div className="dogapp-img">
-                  <img src={img}></img>
+                <div key={uuid()} className="dogapp-img">
+                  <LazyLoadImage
+                    className="img"
+                    width="100%"
+                    height="100%"
+                    effect="blur"
+                    src={img}
+                    alt="dog"
+                  />
                 </div>
               );
             })}
@@ -41,6 +51,6 @@ const Dogs = () => {
       </main>
     </>
   );
-};
+});
 
 export default Dogs;

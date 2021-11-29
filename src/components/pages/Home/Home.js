@@ -1,7 +1,7 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import Card from "./Card";
 import { Appcontext } from "../../App";
-const Home = () => {
+const Home = React.memo(() => {
   const Products = ["Product1", "Product2", "Product3", "Product4"];
   const { setPointer } = useContext(Appcontext);
   return (
@@ -33,6 +33,6 @@ const Home = () => {
       </section>
     </main>
   );
-};
+});
 
 export default Home;

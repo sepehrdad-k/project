@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import { Appcontext } from "../../App";
-const Contact = () => {
+const Contact = React.memo(() => {
   const { setPointer } = useContext(Appcontext);
   const [Message, setMessage] = useState({
     firstname: "",
@@ -115,6 +115,6 @@ const Contact = () => {
       </main>
     </>
   );
-};
+});
 
 export default Contact;

@@ -1,10 +1,11 @@
 import React, { useState, useEffect, useContext } from "react";
 import { Appcontext } from "../../App";
-const Selector = () => {
+const Selector = React.memo(() => {
   const { setPointer } = useContext(Appcontext);
   const { setValue } = useContext(Appcontext);
   const [Data, setData] = useState(["Loading..."]);
   const getdata = async () => {
+    console.log("get list");
     const data = await fetch("https://dog.ceo/api/breeds/list/all");
     const result = await data.json();
     const list = await Object.keys(result.message);
@@ -35,6 +36,7 @@ const Selector = () => {
       </div>
       <div className={Menue ? "menue-box menue-active" : "menue-box"}>
         {Data.map((item) => {
+          console.log("make list");
           return (
             <div
               onClick={() => selection(item)}
@@ -48,6 +50,6 @@ const Selector = () => {
       </div>
     </div>
   );
-};
+});
 
 export default Selector;
