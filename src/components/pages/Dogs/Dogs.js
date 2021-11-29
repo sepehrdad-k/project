@@ -15,7 +15,6 @@ const Dogs = React.memo(() => {
     setList(result.message);
   };
   useEffect(() => {
-    console.log("getimg");
     getimg(url);
   }, [url]);
 
