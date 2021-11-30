@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext } from "react";
 import Card from "./Card";
 import { Appcontext } from "../../App";
 const Home = React.memo(() => {

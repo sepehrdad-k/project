@@ -57,7 +57,7 @@
     justify-self: center;
     align-self: center;
     .img {
-      object-fit: cover;
+      object-fit: contain;
     }
   }
 }

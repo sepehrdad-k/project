@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo } from "react";
+import React, { useState, useMemo } from "react";
 import Navbar from "./Navbar";
 import Cursor from "./Cursor";
 import { Route, Routes, Navigate } from "react-router-dom";
@@ -7,7 +7,6 @@ import Contact from "./pages/Contact/Contact";
 import Dogs from "./pages/Dogs/Dogs";
 
 export const Appcontext = React.createContext();
-export const Cursorcontext = React.createContext();
 
 const App = () => {
   const [Pointer, setPointer] = useState(false);
@@ -22,9 +21,8 @@ const App = () => {
   );
   return (
     <Appcontext.Provider value={State}>
-      <Cursorcontext.Provider value={{ Pointer }}>
-        <Cursor />
-      </Cursorcontext.Provider>
+      <Cursor Pointer={Pointer} />
+
       <Navbar />
       <Routes>
         <Route path="/" element={<Navigate to="/home" />} />
