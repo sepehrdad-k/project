@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from "react";
+import React, { useState, useMemo, useEffect } from "react";
 import Navbar from "./Navbar";
 import Cursor from "./Cursor";
 import { Route, Routes, Navigate } from "react-router-dom";
@@ -9,6 +9,11 @@ import Dogs from "./pages/Dogs/Dogs";
 export const Appcontext = React.createContext();
 
 const App = () => {
+  useEffect(() => {
+    window.onload = (event) => {
+      console.log("page is fully loaded");
+    };
+  }, []);
   const [Pointer, setPointer] = useState(false);
   const [Value, setValue] = useState("akita");
   const State = useMemo(
