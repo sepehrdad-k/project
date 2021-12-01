@@ -13,7 +13,6 @@ const App = () => {
   const [isLoading, setisLoading] = useState(true);
   useEffect(() => {
     window.onload = () => {
-      console.log("loaded");
       setisLoading(false);
     };
   }, []);
