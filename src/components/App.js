@@ -5,13 +5,15 @@ import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
 import Home from "./pages/Home/Home";
 import Contact from "./pages/Contact/Contact";
 import Dogs from "./pages/Dogs/Dogs";
+import Preload from "./Preload";
 
 export const Appcontext = React.createContext();
 
 const App = () => {
+  const [isLoading, setisLoading] = useState(true);
   useEffect(() => {
-    window.onload = (event) => {
-      console.log("page is fully loaded");
+    window.onload = () => {
+      setisLoading(false);
     };
   }, []);
   const [Pointer, setPointer] = useState(false);
@@ -27,8 +29,8 @@ const App = () => {
   return (
     <BrowserRouter>
       <Appcontext.Provider value={State}>
+        <Preload isLoading={isLoading} />
         <Cursor Pointer={Pointer} />
-
         <Navbar />
         <Routes>
           <Route path="/" element={<Navigate to="/home" />} />
