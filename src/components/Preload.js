@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 
-const Preload = ({ preloadmode }) => {
+const Preload = React.memo(({ preloadmode }) => {
+  console.count("preload rendered");
   useEffect(() => {
     setTimeout(() => {
       setpreLoadFade(true);
@@ -31,6 +32,6 @@ const Preload = ({ preloadmode }) => {
       ) : null}
     </>
   );
-};
+});
 
 export default Preload;
