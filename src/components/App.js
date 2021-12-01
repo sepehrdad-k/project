@@ -16,7 +16,7 @@ const App = () => {
       console.log("loaded");
       setisLoading(false);
     };
-  }, [isLoading]);
+  }, []);
   const [Pointer, setPointer] = useState(false);
   const [Value, setValue] = useState("akita");
   const State = useMemo(
