@@ -29,7 +29,7 @@ const App = () => {
   return (
     <BrowserRouter>
       <Appcontext.Provider value={State}>
-        <Preload isLoading={isLoading} />
+        <Preload preloadmode={isLoading} />
         <Cursor Pointer={Pointer} />
         <Navbar />
         <Routes>

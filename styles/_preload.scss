@@ -20,13 +20,17 @@
     height: 12rem;
     border-radius: 0.5rem;
     background-color: $secondary;
-    animation: baranim 500ms ease-in-out infinite alternate;
+    animation: baranim 600ms ease-in-out infinite alternate;
   }
   @for $i from 1 through 10 {
     &-bar:nth-child(#{$i}) {
       animation-delay: $i * 75ms;
     }
   }
+}
+.fade {
+  opacity: 0;
+  transition: opacity 300ms ease;
 }
 
 @keyframes baranim {
