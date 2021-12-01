@@ -4,12 +4,7 @@ import App from "./components/App";
 import { BrowserRouter } from "react-router-dom";
 import "../styles/styles.scss";
 
-ReactDOM.render(
-  <BrowserRouter>
-    <App />
-  </BrowserRouter>,
-  document.getElementById("root")
-);
+ReactDOM.render(<App />, document.getElementById("root"));
 if (module.hot) {
   module.hot.accept();
 }
