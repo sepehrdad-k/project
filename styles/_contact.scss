@@ -33,24 +33,25 @@
 }
 .success-message {
   font-size: 1.6rem;
-  width: 80rem;
-  height: 5rem;
+  width: 60vw;
+  height: 4rem;
   padding: 2rem;
   border-radius: 1rem;
   margin-bottom: 5rem;
+  margin-top: 5rem;
+  color: $light;
   display: flex;
   align-items: center;
-  color: $light;
   background-color: $secondary;
   display: none;
 }
 .show {
-  display: block;
+  display: flex;
 }
 .form {
   background-color: $grey;
   color: $light;
-  width: 60rem;
+  width: clamp(40rem, 60vw, 60rem);
   height: 60rem;
   padding: 2rem;
   margin: 2rem;
