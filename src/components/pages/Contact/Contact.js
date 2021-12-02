@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react";
 import { Appcontext } from "../../App";
 const Contact = React.memo(() => {
   const { setPointer } = useContext(Appcontext);
+  const [Success, setSuccess] = useState(false);
   const [Message, setMessage] = useState({
     firstname: "",
     lastname: "",
@@ -11,6 +12,10 @@ const Contact = React.memo(() => {
   });
   const formhandler = (e) => {
     e.preventDefault();
+    setSuccess(true);
+    setTimeout(() => {
+      setSuccess(false);
+    }, 4000);
     console.log(Message);
     setMessage({
       firstname: "",
@@ -23,6 +28,9 @@ const Contact = React.memo(() => {
   return (
     <>
       <main className="contact">
+        <div className={Success ? "success-message show" : "success-message"}>
+          your message was successfully sent!
+        </div>
         <form
           onMouseEnter={() => setPointer(true)}
           onMouseLeave={() => setPointer(false)}

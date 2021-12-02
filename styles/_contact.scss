@@ -27,8 +27,25 @@
   background: linear-gradient(-5deg, $grey, $dark 50%);
   height: 100vh;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+.success-message {
+  font-size: 1.6rem;
+  width: 80rem;
+  height: 5rem;
+  padding: 2rem;
+  border-radius: 1rem;
+  margin-bottom: 5rem;
+  display: flex;
+  align-items: center;
+  color: $light;
+  background-color: $secondary;
+  display: none;
+}
+.show {
+  display: block;
 }
 .form {
   background-color: $grey;
