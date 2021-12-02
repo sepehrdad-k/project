@@ -17,7 +17,7 @@ const App = ({ fadepreload, hidepreload }) => {
     };
     setTimeout(() => {
       hidepreload();
-    }, 3000);
+    }, 2000);
   }, []);
   const [Pointer, setPointer] = useState(false);
   const [Value, setValue] = useState("akita");

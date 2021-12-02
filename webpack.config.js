@@ -36,7 +36,9 @@ const config = {
     ],
   },
   plugins: [
-    new MiniCssExtractPlugin(),
+    new MiniCssExtractPlugin({
+      filename: "main.[hash].css",
+    }),
     new HtmlWebpackPlugin({
       template: "./src/index.html",
     }),
