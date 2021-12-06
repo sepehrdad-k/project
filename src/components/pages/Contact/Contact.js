@@ -1,6 +1,11 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { Appcontext } from "../../App";
 const Contact = React.memo(() => {
+  useEffect(() => {
+    return () => {
+      clearTimeout(resetId);
+    };
+  }, []);
   const { setPointer } = useContext(Appcontext);
   const [Success, setSuccess] = useState(false);
   const [Message, setMessage] = useState({
@@ -10,12 +15,14 @@ const Contact = React.memo(() => {
     adress: "",
     message: "",
   });
+  let resetId = null;
   const formhandler = (e) => {
     e.preventDefault();
     setSuccess(true);
-    setTimeout(() => {
+    resetId = setTimeout(() => {
       setSuccess(false);
     }, 4000);
+    console.log(resetId);
     console.log(Message);
     setMessage({
       firstname: "",

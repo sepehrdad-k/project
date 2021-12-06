@@ -9,13 +9,18 @@ const Dogs = React.memo(() => {
   const { Value } = useContext(Appcontext);
   const [List, setList] = useState([]);
   const url = `https://dog.ceo/api/breed/${Value}/images`;
-  const getimg = async (url) => {
-    const response = await fetch(url);
+  const abortGetImg = new AbortController();
+  const abortSignal = abortGetImg.signal;
+  const getimg = async (url, abortSignal) => {
+    const response = await fetch(url, { signal: abortSignal });
     const result = await response.json();
     setList(result.message);
   };
   useEffect(() => {
-    getimg(url);
+    getimg(url, abortSignal);
+    return () => {
+      abortGetImg.abort();
+    };
   }, [url]);
 
   return (

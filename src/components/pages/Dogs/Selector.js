@@ -4,15 +4,22 @@ const Selector = React.memo(() => {
   const { setPointer } = useContext(Appcontext);
   const { setValue } = useContext(Appcontext);
   const [Data, setData] = useState(["Loading..."]);
-  const getdata = async () => {
-    const data = await fetch("https://dog.ceo/api/breeds/list/all");
+  const abortGetData = new AbortController();
+  const abortSignal = abortGetData.signal;
+  const getdata = async (abortSignal) => {
+    const data = await fetch("https://dog.ceo/api/breeds/list/all", {
+      signal: abortSignal,
+    });
     const result = await data.json();
     const list = await Object.keys(result.message);
 
     setData(list);
   };
   useEffect(() => {
-    getdata();
+    getdata(abortSignal);
+    return () => {
+      abortGetData.abort();
+    };
   }, []);
   const [Menue, setMenue] = useState(false);
   const [Selected, setSelected] = useState("Choose Breed");
